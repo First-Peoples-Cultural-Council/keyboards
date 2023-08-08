@@ -1,5 +1,9 @@
 Tāłtān Change History
 ============================
+9.1.5 (4 Aug 2023)
+-------------------
+* Changed combined characters to single codepoints where possible
+* Centered mobile keyboard
 
 9.1.4 (6 Mar 2023)
 -------------------
