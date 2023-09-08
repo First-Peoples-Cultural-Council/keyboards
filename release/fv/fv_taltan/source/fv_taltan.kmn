@@ -15,8 +15,14 @@ group(main) using keys
 c --- TOUCH AND DESKTOP STORES ---
 store(NeedsMacron) 'aeiouAEIOU'
 store(HasMacron) 'āēīōūĀĒĪŌŪ'
-store(NeedsComMacB) 'szSZ'
+store(Macron) [T_R] [SHIFT T_R] [K_SLASH]
+store(NeedsMacronB) 'szSZ'
+store(MacronB) [T_X] [SHIFT T_X] [K_LBRKT]
 store(Backspace) [K_BKSP]
+
+any(NeedsMacron) + any(Macron) > index(HasMacron,1)
+any(NeedsMacronB) + any(MacronB) > index(NeedsMacronB,1) U+0331
+any(HasMacron) + any(Backspace) > index(NeedsMacron,1)
 
 c --- START OF TOUCH LAYOUT RULES ---
 
@@ -25,13 +31,6 @@ c Touch layout rules originally imported from KeyMap.plist on Tue Nov 17 2015
 store(&LAYOUTFILE) 'fv_taltan.keyman-touch-layout'
 
 c --- Mobile Stores and Rules ---
-
-store(MMacron) [T_R] [SHIFT T_R]
-store(MComMacB) [T_X] [SHIFT T_X]
-
-any(NeedsMacron) + any(MMacron) > index(HasMacron,1)
-any(NeedsComMacB) + any(MComMacB) > index(NeedsComMacB,1) U+0331
-any(HasMacron) + any(Backspace) > index(NeedsMacron,1)
 
 + [SHIFT T_Q_0] > '!' layer('default')
 + [SHIFT T_Q] > '?' layer('default')
@@ -107,24 +106,17 @@ any(HasMacron) + any(Backspace) > index(NeedsMacron,1)
 c --- END OF TOUCH LAYOUT RULES ---
 
 c constraints
-
-store(Macron) [K_SLASH]
-store(ComMacB) [K_LBRKT] U+0331
-
-any(NeedsMacron) + any(Macron) > index(HasMacron,1)
-any(NeedsComMacB) + any(ComMacB) > index(NeedsComMacB,1) U+0331
-
 any(HasMacron) + any(Macron) > context beep
-any(ComMacB) + any(ComMacB) > context beep
-any(HasMacron) + any(ComMacB) > context beep
-any(ComMacB) + any(Macron) > context beep
-
-any(HasMacron) + any(Backspace) > index(NeedsMacron,1) 
+any(HasMacron) + any(MacronB) > context beep
+U+0304 + any(Macron) > context beep
+U+0304 + any(MacronB) > context beep
+U+0331 + any(Macron) > context beep
+U+0331 + any(MacronB) > context beep
 
 c store(accentkey) [K_equal] [K_Bkquote]  [K_RBRKT]
 store(NumbersAndPunctuation) '°1234567890-=[]\;,./`~!@#$%^&*()_+{}|:"<>?‘’“”‹›«»' "'"  c preventing accents on non-letters
 any(NumbersAndPunctuation) + any(Macron) > context beep
-any(NumbersAndPunctuation) + any(ComMacB) > context beep
+any(NumbersAndPunctuation) + any(MacronB) > context beep
 
 c original punctuation
 + [RALT K_PERIOD] > '>'
@@ -166,8 +158,9 @@ c language
 + [shift caps k_colon] > "ł"
 + [ncaps K_colon] > "ł"
 + [caps k_colon] > "Ł"
-
++ [K_LBRKT] > U+0331
 + [k_rbrkt] > "·"
+
 match > use(normalize)
 nomatch > use(x)
 
