@@ -1,5 +1,9 @@
 Nuučaan̓uł Change History
 ============================
+9.1.4 (2 Oct 2023)
+-------------------
+* Update to single codepoint outputs where possible
+* Center mobile layout
 
 9.1.3 (6 Mar 2023)
 -------------------
