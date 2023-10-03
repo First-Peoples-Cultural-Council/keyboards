@@ -19,9 +19,8 @@ c Touch layout rules originally imported from KeyMap.plist on Tue Nov 17 2015
 
 store(&LAYOUTFILE) 'fv_nuucaanul.keyman-touch-layout'
 
-store(NeedsCombAComma) 'cčkmnpqtyƛCČKMNPQTY'
+store(NeedsCombAComma) 'cčkmnpqtwyƛCČKMNPQTWY'
 store(CombAComma) [T_R] [SHIFT T_R] [K_QUOTE]
-store(HNeedsUnderdot) 'hH'
 
 any(NeedsCombAComma) + any(CombAComma) > index(NeedsCombAComma,1) U+0313
 
@@ -121,11 +120,14 @@ store(accentkey) [K_QUOTE] [K_1]
 store(NumbersAndPunctuation) '1234567890-=[]\;,./`~!@#$%^&*()_+{}|:"<>?‘’“”‹›«»' "'"  c preventing accents on non-letters
 any(NumbersAndPunctuation) + any(accentkey) > context beep
 
+store(HNeedsUnderdot) 'hH'
 store(HUnderdot) 'ḥḤ'
 store(Underdot) [K_1]
 
-any(HNeedsUnderdot) + any(UnderdotKey) > index(HUnderdot,1)
-any(HUnderdot) + any(overaccent) > context beep
+any(HNeedsUnderdot) + any(Underdot) > index(HUnderdot,1)
+any(HUnderdot) + any(overaccentkey) > context beep
+any(HUnderdot) + any(underaccentkey) > context beep
+
 
 c original punctuation
 
