@@ -4,6 +4,7 @@ Nuučaan̓uł Change History
 -------------------
 * Update to single codepoint outputs where possible
 * Center mobile layout
+* Update name to better reflect name of language
 
 9.1.3 (6 Mar 2023)
 -------------------
