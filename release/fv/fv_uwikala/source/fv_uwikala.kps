@@ -16,8 +16,8 @@
     <Items/>
   </StartMenu>
   <Info>
-    <Name URL="">’Uwik̓ala</Name>
-    <Copyright URL="">© 2008-2022 FirstVoices, SIL International. Portions © 2006 Chris Harvey</Copyright>
+    <Name URL="">’Wuìk̓ala</Name>
+    <Copyright URL="">© 2008-2023 FirstVoices, SIL International. Portions © 2006 Chris Harvey</Copyright>
     <Version URL=""></Version>
     <Author URL=""></Author>
     <WebSite URL="https://www.firstvoices.com">https://www.firstvoices.com</WebSite>
@@ -37,7 +37,7 @@
     </File>
     <File>
       <Name>..\build\fv_uwikala.kmx</Name>
-      <Description>Keyboard 'Uwik̓ala</Description>
+      <Description>Keyboard ’Wuìk̓ala</Description>
       <CopyLocation>0</CopyLocation>
       <FileType>.kmx</FileType>
     </File>
@@ -134,7 +134,7 @@
   </Files>
   <Keyboards>
     <Keyboard>
-      <Name>'Uwik̓ala</Name>
+      <Name>’Wuìk̓ala</Name>
       <ID>fv_uwikala</ID>
       <Version>9.2.1</Version>
       <Languages>
