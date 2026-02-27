@@ -1,4 +1,4 @@
-﻿store(&VERSION) "10.1"
+﻿store(&VERSION) "10.0"
 store(&TARGETS) 'any'
 c store(&ETHNOLOGUECODE) "tli"
 store(&COPYRIGHT) '(c) 2015-2026 FirstVoices, SIL International, 2015 First Peoples' U+0027 ' Cultural Foundation, parts 2007 Chris Harvey'
